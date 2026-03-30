@@ -1,6 +1,6 @@
 /*****************************************************************************
  * LibreMines                                                                *
- * Copyright (C) 2020-2025  Bruno Bollos Correa                              *
+ * Copyright (C) 2020-2026  Bruno Bollos Correa                              *
  *                                                                           *
  * This program is free software: you can redistribute it and/or modify      *
  * it under the terms of the GNU General Public License as published by      *
@@ -31,6 +31,8 @@
 
 #ifndef LIBREMINESPREFERENCESDIALOG_H
 #define LIBREMINESPREFERENCESDIALOG_H
+
+#include "gameplaythemechooser.h"
 
 #include <QDialog>
 #include <QtCore>
@@ -168,6 +170,8 @@ private:
     Ui::LibreMinesPreferencesDialog *ui;
     bool updateLanguageDialog;
 
+    GameplayThemeChooser* gameplayThemeChooser;
+
 private Q_SLOTS:
     void SLOT_updateCellLengthParameters();
     void SLOT_updateLanguage();
@@ -177,6 +181,8 @@ private Q_SLOTS:
     void on_sliderSoundVolume_valueChanged(int value);
 
     void on_sliderSoundVolume_sliderReleased();
+
+    void on_pbGameplayCustomization_clicked();
 
 Q_SIGNALS:
     void SIGNAL_optionChanged(const QString& name, const QString& value);
